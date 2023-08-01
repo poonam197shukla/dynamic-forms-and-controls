@@ -1,30 +1,72 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { DynamicFieldComponent } from './components/dynamic-field/dynamic-field.component';
-import { DynamicCheckboxesComponent } from './components/dynamic-field/dynamic-checkboxes/dynamic-checkboxes.component';
-import { DynamicSelectComponent } from './components/dynamic-field/dynamic-select/dynamic-select.component';
-import { DynamicInputComponent } from './components/dynamic-field/dynamic-input/dynamic-input.component';
-import { DynamicRadioComponent } from './components/dynamic-field/dynamic-radio/dynamic-radio.component';
-import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-import { DynamicErrorComponent } from './components/dynamic-form/dynamic-error/dynamic-error.component';
+import { CommonModule } from "@angular/common";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from "@angular/core";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { MatButtonModule, MatIconModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatDatepickerModule, MatNativeDateModule, MatSelectModule, MatOptionModule, MatCheckboxModule, MatRadioModule, MatDatepicker } from "@angular/material";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppComponent } from "./app.component";
+import { ButtonComponent } from "./dynamic-form-and -controls/button/button.component";
+import { CheckboxComponent } from "./dynamic-form-and -controls/checkbox/checkbox.component";
+import { DateComponent } from "./dynamic-form-and -controls/date/date.component";
+import { DynamicFieldDirective } from "./dynamic-form-and -controls/dynamic-field/dynamic-field.directive";
+import { DynamicFormComponent } from "./dynamic-form-and -controls/dynamic-form/dynamic-form.component";
+import { InputComponent } from "./dynamic-form-and -controls/input/input.component";
+import { RadioComponent } from "./dynamic-form-and -controls/radio/radio.component";
+import { SelectComponent } from "./dynamic-form-and -controls/select/select.component";
+import { ReactiveFormComponent } from "./simple-reactive-form/reactive-form/reactive-form.component";
+import { ControlsComponent } from "./simple-reactive-form/controls/controls.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DynamicFieldComponent,
-    DynamicCheckboxesComponent,
-    DynamicSelectComponent,
-    DynamicInputComponent,
-    DynamicRadioComponent,
+    ButtonComponent,
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    DateComponent,
+    CheckboxComponent,
+    RadioComponent,
     DynamicFormComponent,
-    DynamicErrorComponent
+    DynamicFieldDirective,
+    ReactiveFormComponent,
+    ControlsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatDatepickerModule
+    
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ],
+  entryComponents: [
+    ButtonComponent,
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    DateComponent,
+    CheckboxComponent,
+    RadioComponent
+  ]
 })
 export class AppModule { }

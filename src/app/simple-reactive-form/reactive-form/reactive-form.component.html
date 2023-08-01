@@ -1,0 +1,32 @@
+<div [formGroup]="reactiveForm">
+<div class="form-group">
+  <label>
+    Loan Name:
+  </label>
+  <input type="text" formControlName="loanName">
+  <div class="text-danger" *ngIf="reactiveForm.get('loanName').hasError('required') && reactiveForm.get('loanName').touched">Loan name is required</div>
+  <!-- <div class="text-danger" *ngIf="reactiveForm.get('loanName').hasError('minLength') && reactiveForm.get('loanName').touched">Please enter min Loan name 10 chars</div>
+  <div class="text-danger" *ngIf="reactiveForm.get('loanName').hasError('maxLength') && reactiveForm.get('loanName').touched">Please enter max Loan name </div> -->
+
+</div><br>
+<div class="form-group">
+  <label>
+    Loan Description:  
+  </label>
+  <textarea type="textarea" formControlName="loanDescription"></textarea>
+</div><br>
+<div class="form-group">
+  <label>
+    Loan Type:
+  </label>
+  <input type="text" formControlName="loanType">
+</div><br>
+<div class="form-group">
+  <label>
+    Loan Amount:
+  </label>
+  <input type="text" formControlName="loanAmount">
+</div><br>
+<button class="btn btn-primary" [disabled]="!reactiveForm.valid" (click)="addLoanType()">Add Loan Type</button>
+<Button class="btn btn-warning" (click)="reset()">Reset</Button>
+</div>
